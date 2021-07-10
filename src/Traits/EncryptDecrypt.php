@@ -60,7 +60,7 @@ trait EncryptDecrypt
      * @param array $destination
      */
     public function encryptAll(Table $model, array $source, array $destination){
-        $allColumns = array_merge([$model->primaryKey()], $source);
+        $allColumns = array_merge([$model->getPrimaryKey()], $source);
         $getAll = $model->find()->select($allColumns);
 
         if($getAll->count() > 0){
@@ -79,7 +79,7 @@ trait EncryptDecrypt
                 if(!empty($encryptedData)){
                     $syncRow = $model->patchEntity($model->get($data->id), $encryptedData);
                     if (!$this->save($syncRow)){
-                        $this->log(sprintf('Error in saving encrypted data in '.$model->table().' table, id:', $data->id), "info");
+                        $this->log(sprintf('Error in saving encrypted data in '.$model->getTable().' table, id:', $data->id), "info");
                     }
                 }
             }
