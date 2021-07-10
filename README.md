@@ -16,7 +16,7 @@ For CakePHP 4 & CakePHP 3.4+:
 
 For CakePHP <=3.3:
 
-`composer require shakib/cakephp-encrypt-decrypt`
+`composer require shakib/cakephp-encrypt-decrypt:1.0`
 
 ### Setup
 
