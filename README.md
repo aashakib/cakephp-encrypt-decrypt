@@ -12,7 +12,7 @@ Via Composer
 
 For CakePHP 4 & CakePHP 3.4+:
 
-`composer require aashakib/cakephp-encrypt-decrypt`
+`composer require shakib/cakephp-encrypt-decrypt`
 
 For CakePHP <=3.3:
 
