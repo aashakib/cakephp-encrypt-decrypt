@@ -3,7 +3,7 @@
     "description": "A CakePHP plugin to encrypt data and save in database and also to decrypt data when fethcing from database. You can also encrypt or decrypt all historical data.",
     "type": "php",
     "keywords": [
-        "cakephp", "cakephp3", "database", "type", "encrypted", "encryption", "encrypt", "decrypt"
+        "cakephp", "cakephp3", "cakephp4", "database", "type", "encrypted", "encryption", "encrypt", "decrypt"
     ],
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "cakephp/cakephp": "^3.3"
+        "cakephp/cakephp": ">=3.4"
     },
     "autoload": {
         "psr-4": {
