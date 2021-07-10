@@ -10,6 +10,12 @@ A CakePHP library to encrypt and decrypt data.
 
 Via Composer
 
+For CakePHP 4 & CakePHP 3.4+:
+
+`composer require aashakib/cakephp-encrypt-decrypt`
+
+For CakePHP <=3.3:
+
 `composer require shakib/cakephp-encrypt-decrypt`
 
 ### Setup
@@ -21,7 +27,7 @@ Type::map('encrypted', 'EncryptDecrypt\Database\Type\EncryptType');
 Add config value in `config\app.php`
 ``` php
 'Security' => [
-	'encryption_key' => env('ENCRYPTION_KEY', 'YOUR-KEY'),
+    'encryption_key' => env('ENCRYPTION_KEY', 'YOUR-KEY'),
 ]
 ```
 
@@ -42,7 +48,7 @@ CREATE TABLE `accounts`(
 Map all columns in your Table class.
 ``` php
 use Cake\ORM\Table;
-use Cake\Database\Schema\Table as TableSchema;
+use Cake\Database\Schema\TableSchema;
 use EncryptDecrypt\Traits\EncryptDecrypt;
 
 class AccountsTable extends Table
@@ -56,8 +62,8 @@ class AccountsTable extends Table
     */
     protected function _initializeSchema(TableSchema $schema)
     {
-      $schema->columnType('account_number', 'encrypted');
-      $schema->columnType('email', 'encrypted');
+      $schema->setColumnType('account_number', 'encrypted');
+      $schema->setColumnType('email', 'encrypted');
       
       return $schema;
     }
