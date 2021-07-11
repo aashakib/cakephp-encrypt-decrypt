@@ -3,8 +3,8 @@
 namespace EncryptDecrypt\Database\Type;
 
 use EncryptDecrypt\Traits\EncryptDecrypt;
-use Cake\Database\Driver;
-use Cake\Database\Type;
+use Cake\Database\DriverInterface;
+use Cake\Database\Type\BaseType;
 use InvalidArgumentException;
 use PDO;
 
@@ -12,7 +12,7 @@ use PDO;
  * Class EncryptType
  * @package App\Model\Types
  */
-class EncryptType extends Type
+class EncryptType extends BaseType
 {
 
     use EncryptDecrypt;
@@ -22,7 +22,7 @@ class EncryptType extends Type
      * @param Driver $driver
      * @return mixed|string|null
      */
-    public function toDatabase($value, Driver $driver){
+    public function toDatabase($value, DriverInterface $driver){
 
         if ($value === null) {
             return null;
@@ -48,7 +48,7 @@ class EncryptType extends Type
      * @param Driver $driver
      * @return mixed|string|null
      */
-    public function toPHP($value, Driver $driver){
+    public function toPHP($value, DriverInterface $driver){
         if ($value === null) {
             return null;
         }
@@ -77,7 +77,7 @@ class EncryptType extends Type
      * @param Driver $driver
      * @return int|mixed
      */
-    public function toStatement($value, Driver $driver)
+    public function toStatement($value, DriverInterface $driver)
     {
         if ($value === null) {
             return PDO::PARAM_NULL;
