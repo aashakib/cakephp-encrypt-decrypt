@@ -56,11 +56,11 @@ class AccountsTable extends Table
 
    use EncryptDecrypt;
     
-       /**
-        * @param TableSchemaInterface $schema
-        * @return TableSchemaInterface
-        */
-       protected function _initializeSchema(TableSchemaInterface $schema): TableSchemaInterface
+   /**
+    * @param TableSchemaInterface $schema
+    * @return TableSchemaInterface
+    */
+    protected function _initializeSchema(TableSchemaInterface $schema): TableSchemaInterface
     {
       $schema->setColumnType('account_number', 'encrypted');
       $schema->setColumnType('email', 'encrypted');
