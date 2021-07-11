@@ -22,7 +22,7 @@ For CakePHP <=3.3:
 
 Add the type in `bootstrap.php`
 ``` php
-Type::map('encrypted', 'EncryptDecrypt\Database\Type\EncryptType');
+TypeFactory::map('encrypted', 'EncryptDecrypt\Database\Type\EncryptType');
 ```
 Add config value in `config\app.php`
 ``` php
@@ -48,7 +48,7 @@ CREATE TABLE `accounts`(
 Map all columns in your Table class.
 ``` php
 use Cake\ORM\Table;
-use Cake\Database\Schema\TableSchema;
+use Cake\Database\Schema\TableSchemaInterface;
 use EncryptDecrypt\Traits\EncryptDecrypt;
 
 class AccountsTable extends Table
@@ -56,11 +56,11 @@ class AccountsTable extends Table
 
    use EncryptDecrypt;
     
-   /**
-    * @param TableSchema $schema
-    * @return TableSchema
-    */
-    protected function _initializeSchema(TableSchema $schema)
+       /**
+        * @param TableSchemaInterface $schema
+        * @return TableSchemaInterface
+        */
+       protected function _initializeSchema(TableSchemaInterface $schema): TableSchemaInterface
     {
       $schema->setColumnType('account_number', 'encrypted');
       $schema->setColumnType('email', 'encrypted');
