@@ -10,7 +10,7 @@ A CakePHP library to encrypt and decrypt data.
 
 Via Composer
 
-For CakePHP 4 & CakePHP 3.4+:
+For CakePHP 3.4 and above versions:
 
 `composer require shakib/cakephp-encrypt-decrypt`
 
