@@ -86,3 +86,9 @@ public function encryptDecryptAllData()
   return $this->encryptAll($this, $sourceColumns, $destinationColumns);
 }
 ```
+
+To search any data, you can use search text in where clause
+``` php
+$query->where(['email' => 'test@domain.com', 'account_number' => 'xxxxxxxxx']);
+}
+```
