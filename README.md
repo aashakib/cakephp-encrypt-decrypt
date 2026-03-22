@@ -10,9 +10,13 @@ A CakePHP library to encrypt and decrypt data.
 
 Via Composer
 
-For CakePHP 5 & CakePHP 4:
+For CakePHP 5:
 
 `composer require shakib/cakephp-encrypt-decrypt`
+
+For CakePHP 4:
+
+`composer require shakib/cakephp-encrypt-decrypt:~2.2`
 
 For CakePHP 3.4 and above versions for CakePHP 3.x:
 
@@ -60,10 +64,6 @@ class AccountsTable extends Table
 
    use EncryptDecrypt;
     
-   /**
-    * @param TableSchemaInterface $schema
-    * @return TableSchemaInterface
-    */
     public function initialize(array $config): void
     {
 
