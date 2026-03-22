@@ -19,8 +19,9 @@ trait EncryptDecrypt
      * @param $text
      * @return string|null
      */
-    public function encrypt($text){
-        if (empty($text) || ($this->getKey() === null) ){
+    public function encrypt($text)
+    {
+        if (empty($text) || ($this->getKey() === null) ) {
             return null;
         }
 
@@ -34,8 +35,9 @@ trait EncryptDecrypt
      * @param $text
      * @return string|null
      */
-    public function decrypt($text){
-        if (empty($text) || ($this->getKey() === null) ){
+    public function decrypt($text)
+    {
+        if (empty($text) || ($this->getKey() === null)) {
             return null;
         }
 
@@ -48,7 +50,8 @@ trait EncryptDecrypt
      * Get key from app config
      * @return string
      */
-    public function getKey(){
+    public function getKey()
+    {
         $key = \Cake\Core\Configure::read('Security.encryption_key');
 
         return $key;
@@ -59,7 +62,8 @@ trait EncryptDecrypt
      * @param array $source
      * @param array $destination
      */
-    public function encryptAll(Table $model, array $source, array $destination){
+    public function encryptAll(Table $model, array $source, array $destination)
+    {
         $allColumns = array_merge([$model->getPrimaryKey()], $source);
         $getAll = $model->find()->select($allColumns);
 
